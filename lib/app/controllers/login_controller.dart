@@ -24,10 +24,17 @@ class LoginController extends GetxController {
     );
 
     if (response is Success) {
-      // Handle success
+      Get.showSnackbar(
+          const GetSnackBar(
+            duration: Duration(seconds: 2),
+            message: "Login Successful",
+          )
+      );
+      Get.offNamed("home");
     } else if (response is Error) {
       Get.showSnackbar(
         const GetSnackBar(
+          duration: Duration(seconds: 2),
           message: "Some error occurred while Login",
         )
       );

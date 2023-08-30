@@ -51,6 +51,7 @@ class SignupController extends GetxController {
     } else if (response is Error) {
       Get.showSnackbar(
           const GetSnackBar(
+            duration: Duration(seconds: 2),
             message: "Some error occurred while Signup",
           )
       );
@@ -65,6 +66,7 @@ class SignupController extends GetxController {
     } else if (response is Error) {
       Get.showSnackbar(
           const GetSnackBar(
+            duration: Duration(seconds: 2),
             message: "Some error occurred while OTP send",
           )
       );

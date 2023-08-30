@@ -38,6 +38,13 @@ class _LoginViewState extends State<LoginView> {
               onPressed: _controller.isButtonDisabled ? null : _controller.login,
               child: const Text('Login'),
             )),
+            const SizedBox(height: 24),
+            ElevatedButton(
+              onPressed: (){
+                Get.toNamed("signup");
+              },
+              child: const Text('Signup'),
+            )
           ],
         ),
       ),
