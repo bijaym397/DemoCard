@@ -32,7 +32,11 @@ class AddCardController extends GetxController {
     if (response is Success) {
       // Handle success
     } else if (response is Error) {
-      // Handle error
+      Get.showSnackbar(
+          const GetSnackBar(
+            message: "Some error occurred while adding card",
+          )
+      );
     }
   }
 }

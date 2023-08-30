@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../models/login_data.dart';
@@ -25,7 +26,11 @@ class LoginController extends GetxController {
     if (response is Success) {
       // Handle success
     } else if (response is Error) {
-      // Handle error
+      Get.showSnackbar(
+        const GetSnackBar(
+          message: "Some error occurred while Login",
+        )
+      );
     }
   }
 }

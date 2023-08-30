@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import '../controllers/add_card_controller.dart';
 import 'package:get/get.dart';
 
-class UserCardDetail extends StatefulWidget {
-  const UserCardDetail({Key? key}) : super(key: key);
+class AddCardDetails extends StatefulWidget {
+  const AddCardDetails({Key? key}) : super(key: key);
 
   @override
-  State<UserCardDetail> createState() => _UserCardDetailState();
+  State<AddCardDetails> createState() => _AddCardDetailsState();
 }
 
-class _UserCardDetailState extends State<UserCardDetail> {
+class _AddCardDetailsState extends State<AddCardDetails> {
 
   final AddCardController _controller = Get.put(AddCardController());
 

@@ -49,7 +49,11 @@ class SignupController extends GetxController {
     if (response is Success) {
       // Handle success
     } else if (response is Error) {
-      // Handle error
+      Get.showSnackbar(
+          const GetSnackBar(
+            message: "Some error occurred while Signup",
+          )
+      );
     }
   }
 
@@ -59,7 +63,11 @@ class SignupController extends GetxController {
     if (response is Success) {
       // Handle success
     } else if (response is Error) {
-      // Handle error
+      Get.showSnackbar(
+          const GetSnackBar(
+            message: "Some error occurred while OTP send",
+          )
+      );
     }
   }
 
