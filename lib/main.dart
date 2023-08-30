@@ -1,3 +1,4 @@
+import 'package:demo_card/app/views/home.dart';
 import 'package:demo_card/app/views/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'app/views/add_card_details.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/login', page: () => const LoginView()),
         GetPage(name: '/signup', page: () => const SignUp()),
         GetPage(name: '/addCard', page: () => const AddCardDetails()),
+        GetPage(name: '/home', page: () => const Home()),
       ],
     );
   }
