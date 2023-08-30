@@ -17,12 +17,15 @@ class AuthRepository {
         {'mobile': mobile, 'password': password},
       );
 
+      print("fsdfsfsfsf ${json.decode(response.body)}");
+
       if (response.statusCode == 200) {
         final jsonData = json.decode(response.body);
         final user = User.fromJson(jsonData);
         return Success(user);
       } else {
-        return Error('Invalid credentials');
+        final jsonData = json.decode(response.body);
+        return Error(jsonData['message']);
       }
     } catch (e) {
       return Error('An error occurred');
@@ -36,12 +39,13 @@ class AuthRepository {
         signupData.toJson(),
       );
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 201 || response.statusCode == 200) {
         final jsonData = json.decode(response.body);
         final user = User.fromJson(jsonData);
         return Success(user);
       } else {
-        return Error('Signup failed');
+        final jsonData = json.decode(response.body);
+        return Error(jsonData["message"]);
       }
     } catch (e) {
       return Error('An error occurred');
@@ -59,10 +63,14 @@ class AuthRepository {
       if (response.statusCode == 200) {
         return Success(null);
       } else {
-        return Error('Sending OTP failed');
+        return Error(
+            'Sending OTP failed'
+        );
       }
     } catch (e) {
-      return Error('An error occurred');
+      return Error(
+          'An error occurred'
+      );
     }
   }
 }

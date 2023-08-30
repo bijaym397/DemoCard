@@ -47,12 +47,18 @@ class SignupController extends GetxController {
     final response = await _authRepository.signUp(signupData.value);
 
     if (response is Success) {
-      // Handle success
-    } else if (response is Error) {
       Get.showSnackbar(
           const GetSnackBar(
             duration: Duration(seconds: 2),
-            message: "Some error occurred while Signup",
+            message: "Signup Successful",
+          )
+      );
+      Get.offNamed("login");
+    } else if (response is Error) {
+      Get.showSnackbar(
+          GetSnackBar(
+            duration: const Duration(seconds: 2),
+            message: (response as Error).errorMessage,
           )
       );
     }
@@ -62,12 +68,17 @@ class SignupController extends GetxController {
     final response = await _authRepository.sendOtp(signupData.value.mobile);
 
     if (response is Success) {
-      // Handle success
-    } else if (response is Error) {
       Get.showSnackbar(
           const GetSnackBar(
             duration: Duration(seconds: 2),
-            message: "Some error occurred while OTP send",
+            message: "OTP Sent",
+          )
+      );
+    } else if (response is Error) {
+      Get.showSnackbar(
+          GetSnackBar(
+            duration: const Duration(seconds: 2),
+            message: response.errorMessage,
           )
       );
     }
