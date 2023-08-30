@@ -1,5 +1,5 @@
-import 'package:demo_card/app/login.dart';
 import 'package:flutter/material.dart';
+import 'app/views/login.dart';
 
 void main() {
   runApp(const MyApp());
