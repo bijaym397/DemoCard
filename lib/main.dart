@@ -18,10 +18,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      initialRoute: '/login', // Initial route
+      theme: ThemeData.dark(),
+      initialRoute: '/home', // Initial route
       getPages: [
         GetPage(name: '/login', page: () => const LoginView()),
         GetPage(name: '/signup', page: () => const SignUp()),
