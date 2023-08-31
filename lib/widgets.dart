@@ -8,7 +8,7 @@ class CommonScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title ?? "Card")),
+      appBar: AppBar(title: Text(title ?? "Card"), centerTitle: true),
       body: body ?? Text(title ?? "Card "),
     );
   }

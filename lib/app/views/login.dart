@@ -11,39 +11,48 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-
   final LoginController _controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
     return CommonScaffold(
-      title:"Login",
+      title: "Login",
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
           children: [
+            const SizedBox(height: 100),
             TextField(
               onChanged: _controller.updateMobile,
               decoration: const InputDecoration(labelText: 'Mobile'),
+              maxLength: 10,
             ),
             const SizedBox(height: 16),
             TextField(
               onChanged: _controller.updatePassword,
               obscureText: true,
               decoration: const InputDecoration(labelText: 'Password'),
+              maxLength: 10,
             ),
             const SizedBox(height: 24),
             Obx(() => ElevatedButton(
-              onPressed: _controller.isButtonDisabled ? null : _controller.login,
-              child: const Text('Login'),
-            )),
+                  onPressed: _controller.isButtonDisabled
+                      ? null
+                      : () {
+                          Get.offNamed("/home");
+                        },
+                  // _controller.login,
+                  child: const Text('Login'),
+                )),
             const SizedBox(height: 24),
-            ElevatedButton(
-              onPressed: (){
+            TextButton(
+              onPressed: () {
                 Get.toNamed("signup");
               },
-              child: const Text('Signup'),
+              child: const Text(
+                "Don't have account, So Signup",
+                style: TextStyle(fontSize: 18),
+              ),
             )
           ],
         ),

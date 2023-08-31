@@ -30,7 +30,7 @@ class LoginController extends GetxController {
             message: "Login Successful",
           )
       );
-      Get.offNamed("home");
+      Get.offNamed("/home");
     } else if (response is Error) {
       Get.showSnackbar(
         GetSnackBar(

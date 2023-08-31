@@ -28,6 +28,7 @@ class _SignUpState extends State<SignUp> {
               TextField(
                 onChanged: _controller.updateMobile,
                 decoration: const InputDecoration(labelText: 'Mobile'),
+                maxLength: 10,
               ),
               const SizedBox(height: 16),
               ElevatedButton(
@@ -66,7 +67,10 @@ class _SignUpState extends State<SignUp> {
               ),
               const SizedBox(height: 24),
               Obx(() => ElevatedButton(
-                onPressed: _controller.isButtonDisabled ? null : _controller.signUp,
+                onPressed: _controller.isButtonDisabled ? null : (){
+                  Get.offNamed("/home");
+                },
+                // _controller.signUp,
                 child: const Text('Sign Up'),
               )),
             ],

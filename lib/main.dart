@@ -2,6 +2,7 @@ import 'package:demo_card/app/views/home.dart';
 import 'package:demo_card/app/views/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'app/views/add_card_details.dart';
+import 'app/views/card_details.dart';
 import 'app/views/login.dart';
 import 'package:get/get.dart';
 
@@ -19,12 +20,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      initialRoute: '/home', // Initial route
+      initialRoute: '/login', // Initial route
       getPages: [
         GetPage(name: '/login', page: () => const LoginView()),
         GetPage(name: '/signup', page: () => const SignUp()),
         GetPage(name: '/addCard', page: () => const AddCardDetails()),
         GetPage(name: '/home', page: () => const Home()),
+        GetPage(name: '/cardDetails', page: () => const CardDetails()),
       ],
     );
   }
